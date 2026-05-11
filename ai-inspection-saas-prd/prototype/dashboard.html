@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>智巡中枢 · 指挥中心</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dash-body">
+  <main class="dash-shell">
+    <header class="dash-header">
+      <div>
+        <h1>大悦城 L1 指挥中心</h1>
+        <span>AI 视频巡检 · 2.5D 楼层态势 · 告警闭环</span>
+      </div>
+      <div class="dash-nav">
+        <a href="cameras.html">摄像头管理</a>
+        <a href="map-config.html">点位配置</a>
+        <a href="alarms.html">告警查询</a>
+        <strong data-clock></strong>
+      </div>
+    </header>
+
+    <section class="dash-grid">
+      <aside class="dash-panel">
+        <h3>实时告警</h3>
+        <div class="alert-feed">
+          <div class="alert-item">
+            <strong>P2 人员聚集</strong><br>
+            <small>L1 扶梯口 · 置信度 91% · 待确认</small>
+          </div>
+          <div class="alert-item">
+            <strong>P1 消防通道占用</strong><br>
+            <small>L1 消防通道 · SLA 超时 02:10</small>
+          </div>
+          <div class="alert-item">
+            <strong>P3 画面异常</strong><br>
+            <small>B1 停车场东区 · 处理中</small>
+          </div>
+        </div>
+
+        <h3 style="margin-top:24px">AI 巡检任务</h3>
+        <div class="dash-metrics" style="grid-template-columns:1fr 1fr">
+          <div class="dash-metric"><span>今日巡检</span><strong>1,248</strong></div>
+          <div class="dash-metric"><span>待复核</span><strong>7</strong></div>
+          <div class="dash-metric"><span>误报率</span><strong>8.4%</strong></div>
+          <div class="dash-metric"><span>SLA 达标</span><strong>92%</strong></div>
+        </div>
+      </aside>
+
+      <section class="dash-panel dash-map">
+        <div class="map-title-row">
+          <div>
+            <h3>L1 楼层数字态势</h3>
+            <small>2.5D 楼层厚度 · 点位坐标同步 · 告警呼吸定位</small>
+          </div>
+          <div class="floor-tabs" data-dashboard-floors><span class="active" data-floor-tab="L1">L1</span><span data-floor-tab="B1">B1</span><span data-floor-tab="L2">L2</span><span data-floor-tab="L3">L3</span></div>
+        </div>
+        <div class="dash-metrics">
+          <div class="dash-metric"><span>摄像头在线率</span><strong>96%</strong></div>
+          <div class="dash-metric"><span>今日告警</span><strong>32</strong></div>
+          <div class="dash-metric"><span>待处理</span><strong>5</strong></div>
+        </div>
+        <div class="floor-map-wrap">
+          <div class="floor-map" data-dashboard-map>
+            <div class="zone z1"><label data-zone-label="0">主入口</label></div>
+            <div class="zone z2"><label data-zone-label="1">中庭</label></div>
+            <div class="zone z3"><label data-zone-label="2">零售区</label></div>
+            <div class="zone z4"><label data-zone-label="3">消防通道</label></div>
+            <div class="zone z5"><label data-zone-label="4">扶梯连廊</label></div>
+          </div>
+          <div class="map-hint">点位读取自设备点位配置 · 红色呼吸点代表当前告警</div>
+        </div>
+      </section>
+
+      <aside class="dash-panel">
+        <h3>视频轮巡</h3>
+        <div class="video-grid">
+          <div class="video-box">L1 中庭北侧 · WebRTC</div>
+          <div class="video-box">L1 扶梯口 · 告警中</div>
+          <div class="video-box">L1 消防通道 · 在线</div>
+        </div>
+
+        <h3 style="margin-top:24px">风险区域排行</h3>
+        <div class="alert-feed">
+          <div class="alert-item"><strong>扶梯口</strong><br><small>近 24 小时 12 次告警</small></div>
+          <div class="alert-item"><strong>消防通道</strong><br><small>近 24 小时 7 次告警</small></div>
+          <div class="alert-item"><strong>停车场东区</strong><br><small>近 24 小时 5 次告警</small></div>
+        </div>
+      </aside>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

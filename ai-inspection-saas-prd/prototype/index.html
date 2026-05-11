@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>智巡中枢 · 登录</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="login-body">
+  <main class="login-shell">
+    <section class="login-visual">
+      <div class="brand-mark"></div>
+      <h1>商业空间 AI 视频巡检与告警闭环平台</h1>
+      <p>面向购物中心物业中控、安保与工程团队，统一接入摄像头、AI 巡检规则、设备点位和告警证据，让风险发现、确认和处置形成可追溯闭环。</p>
+      <div class="mall-map-hero" aria-hidden="true">
+        <div class="mall-wing w1"></div>
+        <div class="mall-wing w2"></div>
+        <div class="mall-wing w3"></div>
+        <i class="hero-pin p1"></i>
+        <i class="hero-pin p2"></i>
+        <i class="hero-pin p3"></i>
+      </div>
+    </section>
+
+    <section class="login-card">
+      <h2>登录智巡中枢</h2>
+      <p class="hint">大悦城示例项目 · SaaS 租户空间</p>
+      <div class="field">
+        <label for="tenant">企业编码</label>
+        <input id="tenant" value="joycity-demo" autocomplete="organization">
+      </div>
+      <div class="field">
+        <label for="username">账号</label>
+        <input id="username" value="operator01" autocomplete="username">
+      </div>
+      <div class="field">
+        <label for="password">密码</label>
+        <input id="password" type="password" value="123456" autocomplete="current-password">
+      </div>
+      <div class="login-meta">
+        <label><input type="checkbox" checked> 记住账号</label>
+        <a href="#">忘记密码</a>
+      </div>
+      <button class="primary-btn login-submit" data-login>进入系统</button>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>智巡中枢 · 摄像头管理</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="side-brand"><span class="brand-mark"></span><div>智巡中枢<small>AI Inspection SaaS</small></div></div>
+      <div class="side-project">
+        <span>当前项目</span>
+        <strong>大悦城示例项目</strong>
+        <small>单项目 · L1 一层 · 100 路设备</small>
+      </div>
+      <nav class="nav">
+        <small class="nav-section-label">监控运营</small>
+        <a href="dashboard.html" data-icon="⌁">指挥中心</a>
+        <a href="cameras.html" data-icon="□">摄像头管理</a>
+        <small class="nav-section-label">空间配置</small>
+        <a href="map-config.html" data-icon="⌖">点位配置</a>
+        <small class="nav-section-label">事件闭环</small>
+        <a href="alarms.html" data-icon="!">告警查询</a>
+      </nav>
+      <div class="sidebar-footer"><span>当前角色</span><strong>项目管理员</strong><small>具备点位、规则和告警处置权限</small></div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <h1>摄像头管理</h1>
+          <p>统一查看视频接入、媒体流状态、AI 规则和地图点位绑定。</p>
+        </div>
+        <div class="filter-card compact">
+          <label><span>设备搜索</span><input placeholder="搜索摄像头名称/编号"></label>
+          <label><span>楼层</span><select><option>L1 一层</option><option>B1 停车场</option><option>L3 餐饮区</option></select></label>
+          <label><span>状态</span><select><option>全部状态</option><option>在线</option><option>离线</option><option>告警</option></select></label>
+        </div>
+      </header>
+
+      <section class="metrics">
+        <div class="metric-card"><span>摄像头总数</span><strong>100</strong><small>已接入 96 路</small></div>
+        <div class="metric-card"><span>在线率</span><strong>96%</strong><small>最近 5 分钟</small></div>
+        <div class="metric-card"><span>AI 规则绑定</span><strong>68</strong><small>覆盖重点区域</small></div>
+        <div class="metric-card"><span>未配置点位</span><strong>12</strong><small>需项目管理员处理</small></div>
+      </section>
+
+      <section class="content-grid">
+        <div class="table-card">
+          <table>
+            <thead>
+              <tr>
+                <th>摄像头</th>
+                <th>楼层/区域</th>
+                <th>状态</th>
+                <th>AI 能力</th>
+                <th>点位</th>
+                <th>操作</th>
+              </tr>
+            </thead>
+            <tbody data-camera-rows></tbody>
+          </table>
+        </div>
+        <aside class="drawer" data-camera-drawer></aside>
+      </section>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

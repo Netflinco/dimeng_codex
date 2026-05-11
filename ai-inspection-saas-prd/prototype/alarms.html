@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>智巡中枢 · 告警查询</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="side-brand"><span class="brand-mark"></span><div>智巡中枢<small>AI Inspection SaaS</small></div></div>
+      <div class="side-project">
+        <span>当前项目</span>
+        <strong>大悦城示例项目</strong>
+        <small>证据留存 30 天 · 审计开启</small>
+      </div>
+      <nav class="nav">
+        <small class="nav-section-label">监控运营</small>
+        <a href="dashboard.html" data-icon="⌁">指挥中心</a>
+        <a href="cameras.html" data-icon="□">摄像头管理</a>
+        <small class="nav-section-label">空间配置</small>
+        <a href="map-config.html" data-icon="⌖">点位配置</a>
+        <small class="nav-section-label">事件闭环</small>
+        <a href="alarms.html" data-icon="!">告警查询</a>
+      </nav>
+      <div class="sidebar-footer"><span>合规策略</span><strong>证据水印 + 哈希</strong><small>查看与下载均写入审计</small></div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <h1>告警数据查询</h1>
+          <p>查询 AI 告警、查看证据、确认有效性、标记误报并追踪处理闭环。</p>
+        </div>
+        <div class="toolbar">
+          <button class="primary-btn">导出报表</button>
+        </div>
+      </header>
+
+      <section class="alarm-page-grid">
+        <div>
+          <div class="filter-card alarm-filter">
+            <label><span>日期</span><input value="2026-05-09"></label>
+            <label><span>楼层</span><select><option>全部楼层</option><option>L1</option><option>B1</option></select></label>
+            <label><span>类型</span><select><option>全部类型</option><option>人员聚集</option><option>消防通道占用</option></select></label>
+            <label><span>等级</span><select><option>全部等级</option><option>P1</option><option>P2</option><option>P3</option></select></label>
+            <label><span>状态</span><select data-alarm-status>
+              <option value="all">全部状态</option>
+              <option value="待确认">待确认</option>
+              <option value="已确认">已确认</option>
+              <option value="处理中">处理中</option>
+              <option value="已关闭">已关闭</option>
+              <option value="已标记误报">已标记误报</option>
+            </select></label>
+          </div>
+          <div class="table-card">
+            <table>
+              <thead>
+                <tr>
+                  <th>告警编号</th>
+                  <th>类型</th>
+                  <th>等级</th>
+                  <th>摄像头</th>
+                  <th>置信度</th>
+                  <th>状态</th>
+                </tr>
+              </thead>
+              <tbody data-alarm-rows></tbody>
+            </table>
+          </div>
+        </div>
+        <aside class="drawer" data-alarm-detail></aside>
+      </section>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

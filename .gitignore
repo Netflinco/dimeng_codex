@@ -1,0 +1,12 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+
+# Local runtime data
+ai-inspection-saas/data.sqlite3
+ai-inspection-saas/web/uploads/
+
+# Local environment and editor files
+.env
+.vscode/
+.idea/

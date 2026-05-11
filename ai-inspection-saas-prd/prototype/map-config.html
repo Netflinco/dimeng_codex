@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>智巡中枢 · 点位配置</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="side-brand"><span class="brand-mark"></span><div>智巡中枢<small>AI Inspection SaaS</small></div></div>
+      <div class="side-project">
+        <span>当前项目</span>
+        <strong>大悦城示例项目</strong>
+        <small>楼层图 v3 · 相对坐标模式</small>
+      </div>
+      <nav class="nav">
+        <small class="nav-section-label">监控运营</small>
+        <a href="dashboard.html" data-icon="⌁">指挥中心</a>
+        <a href="cameras.html" data-icon="□">摄像头管理</a>
+        <small class="nav-section-label">空间配置</small>
+        <a href="map-config.html" data-icon="⌖">点位配置</a>
+        <small class="nav-section-label">事件闭环</small>
+        <a href="alarms.html" data-icon="!">告警查询</a>
+      </nav>
+      <div class="sidebar-footer"><span>保存策略</span><strong>乐观锁校验</strong><small>floorMapVersion=3</small></div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <h1>设备点位地图配置</h1>
+          <p>左侧展示全量摄像头资产；拖拽未配置摄像头到当前楼层地图后，摄像头管理页同步生成楼层/区域字段。</p>
+        </div>
+        <div class="filter-card compact">
+          <label><span>项目</span><select><option>大悦城示例项目</option></select></label>
+          <label><span>楼层</span><select data-floor-select><option value="L1">L1 一层</option><option value="B1">B1 停车场</option><option value="L3">L3 餐饮区</option></select></label>
+          <button class="ghost-btn" data-conflict-demo>模拟版本冲突</button>
+          <button class="ghost-btn" data-reset-map>重置</button>
+          <button class="ghost-btn" data-preview-map>预览大屏</button>
+          <button class="primary-btn" data-save-map>保存配置</button>
+        </div>
+      </header>
+
+      <section class="map-config-layout">
+        <aside class="config-side">
+          <h3>未配置设备</h3>
+          <div class="field">
+            <input placeholder="搜索设备名称/编号">
+          </div>
+          <div class="device-list" data-unconfigured-list></div>
+
+          <h3 style="margin-top:22px">已配置设备</h3>
+          <div class="device-list" data-configured-list></div>
+        </aside>
+
+        <section class="map-panel">
+          <h3><span data-floor-title>L1 楼层地图</span> <span class="panel-subtitle" data-floor-subtitle>2.5D 配置视图</span></h3>
+          <div class="floor-map-wrap">
+            <div class="floor-map" data-config-map>
+              <div class="zone z1"><label data-zone-label="0">主入口</label></div>
+              <div class="zone z2"><label data-zone-label="1">中庭</label></div>
+              <div class="zone z3"><label data-zone-label="2">零售区</label></div>
+              <div class="zone z4"><label data-zone-label="3">消防通道</label></div>
+              <div class="zone z5"><label data-zone-label="4">扶梯连廊</label></div>
+            </div>
+            <div class="map-hint" data-map-hint>拖拽未配置摄像头到地图 · 配置结果生成楼层/区域 · 坐标保存为 xRatio/yRatio</div>
+          </div>
+        </section>
+
+        <aside class="property-panel" data-selected-device>
+          <h3>点位属性</h3>
+          <p style="color:var(--muted);line-height:1.7">选择地图中的点位查看设备属性、配置楼层/区域、相对坐标、朝向角度和删除操作。摄像头列表中的楼层/区域来自这里的配置结果。</p>
+        </aside>
+      </section>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
