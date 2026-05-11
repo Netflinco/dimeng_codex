@@ -1,6 +1,6 @@
 # AI Inspection SaaS MVP
 
-本仓库包含 AI 商业空间巡检 SaaS 的产品资料、可运行 MVP、前端页面和回归测试资料。
+迪萌的 Codex 代码库，包含 AI 商业空间巡检 SaaS 的产品资料、可运行 MVP、前端页面和回归测试资料。
 
 ## 目录结构
 
